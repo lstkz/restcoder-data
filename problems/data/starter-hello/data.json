@@ -1,0 +1,10 @@
+{
+  "_id": "starter-hello",
+  "name": "Starter: Hello world",
+  "templates": [
+    {"name": "nodejs", "codeTemplate": "nodejs_base"}
+  ],
+  "swaggerSpecs": [
+    {"name": "main", "content": "swagger.json"}
+  ]
+}

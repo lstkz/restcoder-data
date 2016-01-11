@@ -5,7 +5,7 @@ var config = require('config');
 var _ = require("underscore");
 var Path = require("path");
 var utils = require("../lib/utils");
-var CodeTemplate = require("../../restcoder-api/src/models").CodeTemplate;
+var CodeTemplate = require("../lib/models").CodeTemplate;
 
 
 var basePath = Path.join(__dirname, "data");
