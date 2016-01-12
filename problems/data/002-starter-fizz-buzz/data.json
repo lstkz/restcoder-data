@@ -1,6 +1,7 @@
 {
-  "_id": "starter-hello",
-  "name": "Starter: Hello world",
+  "_id": 2,
+  "slug": "starter-fizz-buzz",
+  "name": "Starter: FizzBuzz",
   "templates": [
     {"name": "nodejs", "codeTemplate": "nodejs_base"}
   ],

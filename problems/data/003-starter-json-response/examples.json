@@ -1,0 +1,64 @@
+[
+  {
+    "name": "main",
+    "requests": [
+      {
+        "description": "initially it should return an empty array",
+        "request": {
+          "method": "GET",
+          "url": "/items"
+        },
+        "response": {
+          "status": 200,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": []
+        }
+      },
+      {
+        "description": "add first item",
+        "request": {
+          "method": "POST",
+          "url": "/items",
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {"name": "item1"}
+        },
+        "response": {
+          "status": 201
+        }
+      },
+      {
+        "description": "add another item",
+        "request": {
+          "method": "POST",
+          "url": "/items",
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {"foo": "bar", "value": null, "subItems": [1, 2, 3]}
+        },
+        "response": {
+          "status": 201
+        }
+      },
+
+      {
+        "description": "get all created items",
+        "request": {
+          "method": "GET",
+          "url": "/items"
+        },
+        "response": {
+          "status": 200,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": [{"name": "item1"}, {"foo": "bar", "value": null, "subItems": [1, 2, 3]}]
+        }
+      }
+    ]
+  }
+]

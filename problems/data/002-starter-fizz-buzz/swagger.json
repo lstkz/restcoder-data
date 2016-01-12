@@ -23,23 +23,8 @@
           "200": {
             "description": "Successful response",
             "schema": {
-              "properties": {
-                "result": {
-                  "type": ["number", "string"]
-                }
-              }
+              "type": "string"
 
-            }
-          },
-          "400": {
-            "description": "The `number` parameter is invalid",
-            "schema": {
-              "properties": {
-                "error": {
-
-                  "type": "string"
-                }
-              }
             }
           }
         }

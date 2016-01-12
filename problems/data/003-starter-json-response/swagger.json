@@ -1,0 +1,55 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Starter: JSON response",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/items": {
+      "get": {
+        "description": "Returns an array of all items.",
+
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "title": "Any object",
+                "type": "object"
+              }
+
+            }
+          }
+        }
+      },
+
+      "post": {
+        "description": "Adds an item to the collection",
+        "parameters": [
+
+          {
+            "name": "item",
+            "description": "The item to add. It can contain any properties.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {
+                "propA": {"type": "string"},
+                "propB": {"type": "number"},
+                "propC": {"type": "boolean"}
+              }
+            }
+          }
+
+        ],
+
+        "responses": {
+          "201": {
+            "description": "Successful response"
+          }
+        }
+      }
+    }
+  }
+}

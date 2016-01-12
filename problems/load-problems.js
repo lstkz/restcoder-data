@@ -33,6 +33,9 @@ utils.run(function* () {
                 if (_.isObject(r.response.body)) {
                     r.response.body = JSON.stringify(r.response.body, null, 4);
                 }
+                if (_.isObject(r.request.body)) {
+                    r.request.body = JSON.stringify(r.request.body, null, 4);
+                }
             });
         });
         if (data.swaggerSpecs) {

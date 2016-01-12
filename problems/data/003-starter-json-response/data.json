@@ -1,6 +1,7 @@
 {
-  "_id": "starter-fizz-buzz",
-  "name": "Starter: FizzBuzz",
+  "_id": 3,
+  "slug": "starter-json-response",
+  "name": "Starter: JSON response",
   "templates": [
     {"name": "nodejs", "codeTemplate": "nodejs_base"}
   ],
