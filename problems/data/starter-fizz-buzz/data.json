@@ -1,0 +1,10 @@
+{
+  "_id": "starter-fizz-buzz",
+  "name": "Starter: FizzBuzz",
+  "templates": [
+    {"name": "nodejs", "codeTemplate": "nodejs_base"}
+  ],
+  "swaggerSpecs": [
+    {"name": "main", "content": "swagger.json"}
+  ]
+}

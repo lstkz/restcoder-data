@@ -11,7 +11,9 @@ for example:
     {"name": "main", "content": "swagger.json"}
   ]
 ```   
-The content field will be replaced with content from `swagger.json` file
+The content field will be replaced with the content from the `swagger.json` file.
+Use markdown syntax:  
+ Add code `<%- md("overview.md") %>` and create `overview.md` file  
   
 Load all problems
 ```

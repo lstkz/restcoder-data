@@ -1,0 +1,49 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Starter: Fizz Buzz",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/fizzbuzz/{number}": {
+      "get": {
+        "description": "Transforms the `number` parameter to FizzBuzz result.",
+
+        "parameters": [
+          {
+            "name": "number",
+            "description": "The FizzBuzz number",
+            "in": "path",
+            "required": true,
+            "type": "integer",
+            "format": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "properties": {
+                "result": {
+                  "type": ["number", "string"]
+                }
+              }
+
+            }
+          },
+          "400": {
+            "description": "The `number` parameter is invalid",
+            "schema": {
+              "properties": {
+                "error": {
+
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

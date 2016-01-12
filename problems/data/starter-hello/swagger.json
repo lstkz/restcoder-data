@@ -7,12 +7,12 @@
   "paths": {
     "/hello": {
       "get": {
-        "description": "Your only endpoint to implement",
+        "description": "Get the word `world`",
         "responses": {
           "200": {
-            "description": "Always return `world`",
-            "examples": {
-              "text/plain": "world"
+            "description": "Successful response",
+            "schema": {
+              "type": "string"
             }
           }
         }
