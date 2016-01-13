@@ -1,0 +1,25 @@
+[
+  {
+    "name": "main",
+    "requests": [
+      {
+        "description": "get all products",
+        "request": {
+          "method": "GET",
+          "url": "/products"
+        },
+        "response": {
+          "status": 200,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": [
+            {"id": 1, "name": "apple", "quantity": 5},
+            {"id": 2, "name": "book", "quantity": 7},
+            {"id": 3, "name": "car", "quantity": 2}
+          ]
+        }
+      }
+    ]
+  }
+]

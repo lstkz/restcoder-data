@@ -1,11 +1,11 @@
 {
   "ENV_HEADER": "<tr><th>Name</th><th>Description</th><th>Sample</th></tr>",
   "ENV": {
-    "PORT": "<tr><td><code>PORT</code></td> <td>the port to listen</td><td><code>5000</code></td></tr>"
+    "PORT": "<tr><td><code>PORT</code></td> <td>The port to listen.</td><td><code>5000</code></td></tr>",
+    "POSTGRES_URL": "<tr><td><code>POSTGRES_URL</code></td> <td>The url for postgres database.</td><td><code>postgres://username:pass@192.168.1.10:5432/mydb</code></td></tr>"
   },
   "NOTE": {
     "READY": "Your application must write <code>READY</code> to the standard output after your server is ready to receive HTTP requests. Timeout is 3s.",
-    "MULTI_INSTANCE": "Your application will be deployed in multi instance environment. You should not use local variables or local files for persistence.",
     "MULTI_INSTANCE": "Your application must be stateless. Any data must be stored in a database."
   }
 }

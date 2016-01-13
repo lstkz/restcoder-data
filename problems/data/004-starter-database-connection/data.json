@@ -1,0 +1,11 @@
+{
+  "_id": 4,
+  "slug": "starter-database-connection",
+  "name": "Starter: Database connection",
+  "templates": [
+    {"name": "nodejs", "codeTemplate": "nodejs_base"}
+  ],
+  "swaggerSpecs": [
+    {"name": "main", "content": "swagger.json"}
+  ]
+}
