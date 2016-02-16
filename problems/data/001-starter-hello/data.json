@@ -2,10 +2,24 @@
   "_id": 1,
   "slug": "starter-hello",
   "name": "Starter: Hello world",
-  "templates": [
-    {"name": "nodejs", "codeTemplate": "nodejs_base"}
-  ],
   "swaggerSpecs": [
     {"name": "main", "content": "swagger.json"}
-  ]
+  ],
+  "level": "Very Easy",
+  "tags": ["starter"],
+  "runtime": {
+    "services": {
+      "base": []
+    },
+    "testSpec": {
+      "testCase": "001-starter-hello"
+    },
+    "processes": {
+      "web": {
+        "instances": 1
+      }
+    },
+    "link": {
+    }
+  }
 }

@@ -15,7 +15,6 @@ var variables = require("./variables.json");
 
 
 utils.run(function* () {
-    yield Problem.remove({});
     var directories = fs.readdirSync(basePath);
     yield directories.map(dir => {
         var path = basePath + "/" + dir;
@@ -44,6 +43,13 @@ utils.run(function* () {
                 return spec;
             });
         }
-        return Problem.create(data);
+        return function* () {
+            try {
+                yield Problem.findByIdAndUpdate(data._id, data, {upsert:true});
+            } catch (e) {
+                console.log('failed: ' + dir);
+                throw e;
+            }
+        };
     });
 });

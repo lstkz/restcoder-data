@@ -5,7 +5,26 @@
   "templates": [
     {"name": "nodejs", "codeTemplate": "nodejs_base"}
   ],
+  "level": "Very Easy",
+  "tags": ["starter"],
   "swaggerSpecs": [
     {"name": "main", "content": "swagger.json"}
-  ]
+  ],
+  "runtime": {
+    "services": {
+      "base": [
+      ]
+    },
+    "testSpec": {
+      "testCase": "002-starter-fizz-buzz"
+    },
+    "processes": {
+      "web": {
+        "instances": 1
+      }
+    },
+    "link": {
+      "postgres": ["web"]
+    }
+  }
 }

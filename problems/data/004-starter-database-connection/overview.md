@@ -4,9 +4,9 @@ Following table with be pre-created with test data:
 ```
 CREATE TABLE "product"
 (
-    id bigserial NOT NULL,
-    name character varying(20) NOT NULL,
-    quantity int NOT NULL,
+    id SERIAL NOT NULL,
+    name CHARACTER VARYING(20) NOT NULL,
+    quantity INT NOT NULL,
     CONSTRAINT product_pkey PRIMARY KEY (id)
 )
 ```

@@ -1,0 +1,62 @@
+[
+  {
+    "_id": "service_mysql",
+    "dockerImage": "docker.restcoder.com/service_mysql",
+    "description": "MySQL database",
+    "version": "5.1.73",
+    "url": "mysql://root:root@{{ip}}:{{port}}/mydb",
+    "port": 3306,
+    "envName": "MYSQL_URL",
+    "limits": {
+      "memory": "128M"
+    },
+    "rank": {
+      "name": "mysql"
+    }
+  },
+  {
+    "_id": "service_mongodb",
+    "dockerImage": "docker.restcoder.com/service_mongodb",
+    "description": "MongoDB database",
+    "version": "3.2.0",
+    "url": "mongodb://{{ip}}:{{port}}/mydb",
+    "port": 27017,
+    "envName": "MYSQL_URL",
+    "limits": {
+      "memory": "128M"
+    },
+    "rank": {
+      "name": "mongodb"
+    }
+  },
+  {
+    "_id": "service_redis",
+    "dockerImage": "docker.restcoder.com/service_redis",
+    "description": "Redis key-value storage",
+    "version": "3.0.6",
+    "url": "redis://{{ip}}:{{port}}",
+    "port": 6379,
+    "envName": "REDIS_URL",
+    "limits": {
+      "memory": "64M"
+    },
+    "rank": {
+      "name": "redis"
+    }
+  },
+  {
+    "_id": "service_postgres",
+    "dockerImage": "docker.restcoder.com/service_postgres",
+    "description": "Postgres database",
+    "version": "8.4.20",
+    "url": "postgres://postgres:postgres@{{ip}}:{{port}}/mydb",
+    "port": 5432,
+    "envName": "POSTGRES_URL",
+    "limits": {
+      "memory": "64M"
+    },
+    "rank": {
+      "name": "postgres"
+    }
+  }
+]
