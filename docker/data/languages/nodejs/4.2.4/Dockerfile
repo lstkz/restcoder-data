@@ -1,4 +1,4 @@
-FROM docker.restcoder.com/base_trusty
+FROM restcoder/base_trusty
 
 ENV NPM_CONFIG_LOGLEVEL info
 ENV NODE_VERSION 4.2.4

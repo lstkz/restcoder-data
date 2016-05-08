@@ -1,7 +1,7 @@
 [
   {
     "_id": "service_mysql",
-    "dockerImage": "docker.restcoder.com/service_mysql",
+    "dockerImage": "restcoder/service_mysql:5.1.73",
     "description": "MySQL database",
     "version": "5.1.73",
     "url": "mysql://root:root@{{ip}}:{{port}}/mydb",
@@ -16,7 +16,7 @@
   },
   {
     "_id": "service_mongodb",
-    "dockerImage": "docker.restcoder.com/service_mongodb",
+    "dockerImage": "restcoder/service_mongodb:3.2.0",
     "description": "MongoDB database",
     "version": "3.2.0",
     "url": "mongodb://{{ip}}:{{port}}/mydb",
@@ -31,7 +31,7 @@
   },
   {
     "_id": "service_redis",
-    "dockerImage": "docker.restcoder.com/service_redis",
+    "dockerImage": "restcoder/service_redis:3.0.6",
     "description": "Redis key-value storage",
     "version": "3.0.6",
     "url": "redis://{{ip}}:{{port}}",
@@ -46,7 +46,7 @@
   },
   {
     "_id": "service_postgres",
-    "dockerImage": "docker.restcoder.com/service_postgres",
+    "dockerImage": "restcoder/service_postgres:8.4.20",
     "description": "Postgres database",
     "version": "8.4.20",
     "url": "postgres://postgres:postgres@{{ip}}:{{port}}/mydb",

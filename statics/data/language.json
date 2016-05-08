@@ -2,6 +2,6 @@
   {
     "_id": "nodejs",
     "versions": ["4.2.4", "5.4.1"],
-    "dockerImage": "docker.restcoder.com/lang_nodejs"
+    "dockerImage": "restcoder/lang_nodejs"
   }
 ]
