@@ -10,7 +10,11 @@ var CodeTemplate = require("../lib/models").CodeTemplate;
 
 var basePath = Path.join(__dirname, "data");
 var baseDirs = [
-    Path.join(basePath, "nodejs")
+    Path.join(basePath, "nodejs"),
+    Path.join(basePath, "ruby"),
+    Path.join(basePath, "python"),
+    Path.join(basePath, "java"),
+    Path.join(basePath, "dotnet"),
 ];
 
 utils.run(function* () {
