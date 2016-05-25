@@ -1,0 +1,12 @@
+{
+  "name": "005-todo-list",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.4.19",
+    "mongoose-auto-increment": "^5.0.1",
+    "mysql": "^2.10.2",
+    "pg": "^4.5.5",
+    "sequelize": "^3.23.2"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "_id": 5,
+  "slug": "todo-list",
+  "name": "TODO list",
+  "swaggerSpecs": [
+    {"name": "main", "content": "swagger.json"}
+  ],
+  "level": "Easy",
+  "tags": ["postgres", "mysql", "mongodb", "any database"],
+  "runtime": {
+    "services": {
+      "select": {
+        "database": ["service_postgres", "service_mysql", "service_mongodb"]
+      }
+    },
+    "testSpec": {
+      "testCase": "005-todo-list"
+    },
+    "processes": {
+      "web": {
+        "instances": 2
+      }
+    },
+    "link": {
+      "database": ["web"]
+    }
+  }
+}

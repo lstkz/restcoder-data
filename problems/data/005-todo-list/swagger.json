@@ -1,0 +1,94 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "TODO List",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/todos": {
+      "get": {
+        "description": "Returns an array of all todos.",
+
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "title": "TODO",
+                "properties": {
+                  "id": {"type": "number"},
+                  "name": {"type": "string"},
+                  "done": {"type": "boolean"}
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "description": "Adds a new TODO item.",
+        "parameters": [
+
+          {
+            "name": "item",
+            "description": "The item to add.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {
+                "name": {"type": "string"}
+              }
+            }
+          }
+
+        ],
+
+        "responses": {
+          "201": {
+            "description": "Successful response. The created TODO item should be returned.",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {"type": "number"},
+                "name": {"type": "string"},
+                "done": {"type": "boolean"}
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid parameters. `name` is not provided, empty or invalid"
+          }
+        }
+      }
+    },
+
+    "/todos/{id}/done": {
+
+      "post": {
+        "description": "Marks a TODO item as done.",
+        "parameters": [
+          {
+            "name": "id",
+            "description": "The TODO item ID",
+            "in": "path",
+            "type": "number",
+            "required": true
+          }
+        ],
+
+        "responses": {
+          "404": {
+            "description": "TODO item is not found"
+          },
+          "400": {
+            "description": "`id` is not a valid number or todo is already done"
+          },
+          "204": {
+            "description": "Successful response"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,147 @@
+[
+  {
+    "name": "main",
+    "requests": [
+      {
+        "description": "Create first TODO",
+        "request": {
+          "method": "POST",
+          "url": "/products",
+          "body": {
+            "name": "my first todo"
+          }
+        },
+        "response": {
+          "status": 201,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "id": 1,
+            "name": "my first todo",
+            "done": false
+          }
+        }
+      },
+
+      {
+        "description": "Create another TODO",
+        "request": {
+          "method": "POST",
+          "url": "/products",
+          "body": {
+            "name": "my second todo"
+          }
+        },
+        "response": {
+          "status": 201,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "id": 2,
+            "name": "my second todo",
+            "done": false
+          }
+        }
+      },
+
+      {
+        "description": "Mark first todo as done",
+        "request": {
+          "method": "POST",
+          "url": "/products/1/done"
+        },
+        "response": {
+          "status": 204
+        }
+      },
+
+      {
+        "description": "Mark first todo as done again",
+        "request": {
+          "method": "POST",
+          "url": "/products/1/done"
+        },
+        "response": {
+          "status": 400,
+          "body": {
+            "error": "TODO is already done"
+          }
+        }
+      },
+
+      {
+        "description": "Get all TODOs",
+        "request": {
+          "method": "GET",
+          "url": "/products"
+        },
+        "response": {
+          "status": 200,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": [{
+            "id": 1,
+            "name": "my first todo",
+            "done": true
+          }, {
+            "id": 2,
+            "name": "my second todo",
+            "done": false
+          }]
+        }
+      },
+
+      {
+        "description": "TODO is not found",
+        "request": {
+          "method": "POST",
+          "url": "/products/12345/done"
+        },
+        "response": {
+          "status": 404,
+          "body": {
+            "error": "TODO not found"
+          }
+        }
+      },
+
+      {
+        "description": "Invalid id",
+        "request": {
+          "method": "POST",
+          "url": "/products/-5/done"
+        },
+        "response": {
+          "status": 400,
+          "body": {
+            "error": "invalid id"
+          }
+        }
+      },
+
+
+      {
+        "description": "Name is invalid",
+        "request": {
+          "method": "POST",
+          "url": "/products",
+          "body": {
+            "name": null
+          }
+        },
+        "response": {
+          "status": 400,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "error": "invalid name"
+          }
+        }
+      }
+    ]
+  }
+]

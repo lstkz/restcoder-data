@@ -17,11 +17,11 @@
   {
     "_id": "service_mongodb",
     "dockerImage": "restcoder/service_mongodb:3.2.0",
-    "description": "MongoDB database",
+    "description": "MongoDB",
     "version": "3.2.0",
     "url": "mongodb://{{ip}}:{{port}}/mydb",
     "port": 27017,
-    "envName": "MYSQL_URL",
+    "envName": "MONGODB_URL",
     "limits": {
       "memory": "128M"
     },
@@ -32,7 +32,7 @@
   {
     "_id": "service_redis",
     "dockerImage": "restcoder/service_redis:3.0.6",
-    "description": "Redis key-value storage",
+    "description": "Redis",
     "version": "3.0.6",
     "url": "redis://{{ip}}:{{port}}",
     "port": 6379,
@@ -46,10 +46,10 @@
   },
   {
     "_id": "service_postgres",
-    "dockerImage": "restcoder/service_postgres:8.4.20",
-    "description": "Postgres database",
-    "version": "8.4.20",
-    "url": "postgres://postgres:postgres@{{ip}}:{{port}}/mydb",
+    "dockerImage": "restcoder/service_postgres:9.5.3",
+    "description": "Postgres",
+    "version": "9.5.3",
+    "url": "postgres://postgres:postgres@{{ip}}:{{port}}/postgres",
     "port": 5432,
     "envName": "POSTGRES_URL",
     "limits": {
