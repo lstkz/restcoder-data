@@ -67,9 +67,12 @@ app.post('/todos/:id/done', (req, res, next) => {
 
 
 app.listen(process.env.PORT, function () {
-    //Keep this line, otherwise your app will fail testing
-
-  sequelize.sync().then(function () {
+  //Keep this line, otherwise your app will fail testing
+  if (!process.env.INSTANCE_NR || process.env.INSTANCE_NR === '0') {
+    sequelize.sync().then(function () {
+      console.log('READY');
+    })
+  } else {
     console.log('READY');
-  })
+  }
 });

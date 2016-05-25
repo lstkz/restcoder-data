@@ -3,7 +3,9 @@
     
     Implement a TODO list api using your favorite database.
     <br/>
-    You can choose only one type of database.
+    You can choose only one type of database.  
+    <br/>
+    You can use any database schema, but your must initialize it in your code.
 
 </section>
 
@@ -25,6 +27,7 @@
     <table class="table table-bordered table-condensed">
         <%- ENV_HEADER %>
         <%- ENV.PORT %>
+        <%- ENV.INSTANCE_NR %>
         <%- ENV.POSTGRES_URL %>
         <%- ENV.MONGODB_URL %>
         <%- ENV.MYSQL_URL %>
