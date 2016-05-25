@@ -1,9 +1,9 @@
 [
   {
     "_id": "service_mysql",
-    "dockerImage": "restcoder/service_mysql:5.1.73",
-    "description": "MySQL database",
-    "version": "5.1.73",
+    "dockerImage": "restcoder/service_mysql:5.7.12",
+    "description": "MySQL",
+    "version": "5.7.12",
     "url": "mysql://root:root@{{ip}}:{{port}}/mydb",
     "port": 3306,
     "envName": "MYSQL_URL",
