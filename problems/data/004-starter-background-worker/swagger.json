@@ -1,0 +1,26 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Background worker",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/sum": {
+      "get": {
+        "description": "Returns the sum of quantity.",
+
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sum": {"type": "number"}
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

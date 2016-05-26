@@ -1,0 +1,31 @@
+<section>
+    <h4>Overview</h4>
+
+    <%- md("overview.md") %>
+
+</section>
+
+
+<section>
+    <h4>Notes</h4>
+    <ul>
+        <li><%- NOTE.READY %></li>
+        <li>The background worker will be started after your web process outputs <code>READY</code>.</li>
+        <li>You can use any commands from Redis. There are no restrictions. See documentation <a href="http://redis.io/commands">http://redis.io/commands</a>.</li>
+        <li>The background worker should never exit.</li>
+        <li>The web process won't have access to the postgres database.</li>
+        <li>Don't use disk to share any state between the background worker and web. Both processes will be deployed on separated machines.</li>
+    </ul>
+</section>
+
+
+<section>
+    <h4>Environmental Variables</h4>
+
+    <table class="table table-bordered table-condensed">
+        <%- ENV_HEADER %>
+        <%- ENV.PORT %>
+        <%- ENV.POSTGRES_URL %>
+        <%- ENV.REDIS_URL %>
+    </table>
+</section>

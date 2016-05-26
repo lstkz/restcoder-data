@@ -1,0 +1,33 @@
+{
+  "_id": 4,
+  "slug": "starter-background-worker",
+  "name": "Starter: Background worker",
+  "swaggerSpecs": [
+    {"name": "main", "content": "swagger.json"}
+  ],
+  "level": "Easy",
+  "tags": ["postgres", "redis", "any database"],
+  "runtime": {
+    "services": {
+      "base": {
+        "postgres": "service_postgres",
+        "redis": "service_redis"
+      }
+    },
+    "testSpec": {
+      "testCase": "004-starter-background-worker"
+    },
+    "processes": {
+      "web": {
+        "instances": 1
+      },
+      "worker": {
+        "instances": 1
+      }
+    },
+    "link": {
+      "database": ["worker"],
+      "redis": ["web"]
+    }
+  }
+}

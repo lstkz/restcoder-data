@@ -1,0 +1,23 @@
+[
+  {
+    "name": "main",
+    "requests": [
+      {
+        "description": "Get sum",
+        "request": {
+          "method": "GET",
+          "url": "/sum"
+        },
+        "response": {
+          "status": 200,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "sum": 10
+          }
+        }
+      }
+    ]
+  }
+]

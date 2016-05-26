@@ -1,0 +1,28 @@
+{
+  "_id": 3,
+  "slug": "starter-multiple-instances",
+  "name": "Starter: Multiple instances",
+  "swaggerSpecs": [
+    {"name": "main", "content": "swagger.json"}
+  ],
+  "level": "Very Easy",
+  "tags": ["starter", "postgres"],
+  "runtime": {
+    "services": {
+      "base": {
+        "postgres": "service_postgres"
+      }
+    },
+    "testSpec": {
+      "testCase": "003-starter-multiple-instances"
+    },
+    "processes": {
+      "web": {
+        "instances": 2
+      }
+    },
+    "link": {
+      "postgres": ["web"]
+    }
+  }
+}

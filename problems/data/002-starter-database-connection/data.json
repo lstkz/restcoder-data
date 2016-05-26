@@ -1,5 +1,5 @@
 {
-  "_id": 4,
+  "_id": 2,
   "slug": "starter-database-connection",
   "name": "Starter: Database connection",
   "swaggerSpecs": [
@@ -14,7 +14,7 @@
       }
     },
     "testSpec": {
-      "testCase": "004-starter-database-connection"
+      "testCase": "002-starter-database-connection"
     },
     "processes": {
       "web": {
