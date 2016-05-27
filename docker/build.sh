@@ -8,7 +8,7 @@ docker build -t restcoder/base_wheezy data/base/wheezy
 docker build -t restcoder/service_mongodb:3.2.6  data/service_mongodb/3.2.6
 docker build -t restcoder/service_mysql:5.7.12  data/service_mysql/5.7.12
 docker build -t restcoder/service_postgres:9.5.3  data/service_postgres/9.5.3
-docker build -t restcoder/service_redis:3.0.6  data/service_redis/3.0.6
+docker build -t restcoder/service_redis:3.2.0  data/service_redis/3.2.0
 
 
 #NODEJS
