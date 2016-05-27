@@ -12,7 +12,7 @@ app.get("/sum", function (req, res, next) {
       return next(err);
     }
     res.json({
-      sum: Number(result)
+      sum: result ? Number(result) : 0
     });
   });
 });

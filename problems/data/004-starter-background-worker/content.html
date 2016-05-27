@@ -10,7 +10,7 @@
     <h4>Notes</h4>
     <ul>
         <li><%- NOTE.READY %></li>
-        <li>The background worker will be started after your web process outputs <code>READY</code>.</li>
+        <li>The background worker should also write <code>READY</code> to the standard output.</li>
         <li>You can use any commands from Redis. There are no restrictions. See documentation <a href="http://redis.io/commands">http://redis.io/commands</a>.</li>
         <li>The background worker should never exit.</li>
         <li>The web process won't have access to the postgres database.</li>

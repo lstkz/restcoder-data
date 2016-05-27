@@ -16,7 +16,7 @@ pg.connect(process.env.POSTGRES_URL, function (err, client) {
         return;
       }
       const row = result.rows[0];
-      const sum = row ? row.sum : 0;
+      const sum = row.sum || 0;
       redisClient.set('sum', sum, function (err) {
         if (err) {
           console.error('redis error', err.stack);
@@ -29,3 +29,5 @@ pg.connect(process.env.POSTGRES_URL, function (err, client) {
 
   setInterval(start, 1000);
 });
+
+console.log('READY');

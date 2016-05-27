@@ -2,7 +2,7 @@
 Create an application that will contain a web process and background worker.  
 The background worker should do following things:
 1. Read data from the postgres database.
-2. Compute sum of all `quantity`.
+2. Compute sum of all `quantity` (return `0` if there are no elements).
 3. Insert a computed value to [Redis](http://redis.io/commands) (override a previous value).
 4. Sleep 1 second.
 5. Repeat step 1.
