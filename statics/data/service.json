@@ -31,9 +31,9 @@
   },
   {
     "_id": "service_redis",
-    "dockerImage": "restcoder/service_redis:3.0.6",
+    "dockerImage": "restcoder/service_redis:3.2.0",
     "description": "Redis",
-    "version": "3.0.6",
+    "version": "3.2.0",
     "url": "redis://{{ip}}:{{port}}",
     "port": 6379,
     "envName": "REDIS_URL",
