@@ -6,7 +6,7 @@
     {"name": "main", "content": "swagger.json"}
   ],
   "level": "Easy",
-  "tags": ["postgres", "redis", "any database"],
+  "tags": ["starter", "postgres", "redis", "any database"],
   "runtime": {
     "services": {
       "base": {
