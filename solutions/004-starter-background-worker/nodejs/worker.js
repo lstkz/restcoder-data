@@ -27,6 +27,7 @@ pg.connect(process.env.POSTGRES_URL, function (err, client) {
     });
   }
 
+  start();
   setInterval(start, 1000);
 });
 
