@@ -17,7 +17,7 @@
     "testSpec": {
       "testCase": "004-starter-background-worker"
     },
-    "processes": {
+    "processes": {  
       "web": {
         "instances": 1
       },

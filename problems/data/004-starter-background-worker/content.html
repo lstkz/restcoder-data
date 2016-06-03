@@ -3,6 +3,7 @@
 
     <%- md("overview.md") %>
 
+    <strong>This is a starter problem. You can find a complete solution <a href="https://github.com/restcoder/Starter-Background-worker">here</a>.</strong>
 </section>
 
 
@@ -22,10 +23,12 @@
 <section>
     <h4>Environmental Variables</h4>
 
-    <table class="table table-bordered table-condensed">
-        <%- ENV_HEADER %>
-        <%- ENV.PORT %>
-        <%- ENV.POSTGRES_URL %>
-        <%- ENV.REDIS_URL %>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-bordered table-condensed">
+            <%- ENV_HEADER %>
+            <%- ENV.PORT %>
+            <%- ENV.POSTGRES_URL %>
+            <%- ENV.REDIS_URL %>
+        </table>
+    </div>
 </section>

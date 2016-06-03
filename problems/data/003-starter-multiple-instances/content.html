@@ -3,6 +3,7 @@
 
     <%- md("overview.md") %>
 
+    <strong>This is a starter problem. You can find a complete solution <a href="https://github.com/restcoder/Starter-Multiple-instances">here</a>.</strong>
 </section>
 
 
@@ -18,10 +19,12 @@
 <section>
     <h4>Environmental Variables</h4>
 
-    <table class="table table-bordered table-condensed">
-        <%- ENV_HEADER %>
-        <%- ENV.PORT %>
-        <%- ENV.INSTANCE_NR %>
-        <%- ENV.POSTGRES_URL %>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-bordered table-condensed">
+            <%- ENV_HEADER %>
+            <%- ENV.PORT %>
+            <%- ENV.INSTANCE_NR %>
+            <%- ENV.POSTGRES_URL %>
+        </table>
+    </div>
 </section>

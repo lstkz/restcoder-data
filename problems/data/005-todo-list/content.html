@@ -24,12 +24,14 @@
 <section>
     <h4>Environmental Variables</h4>
 
-    <table class="table table-bordered table-condensed">
-        <%- ENV_HEADER %>
-        <%- ENV.PORT %>
-        <%- ENV.INSTANCE_NR %>
-        <%- ENV.POSTGRES_URL %>
-        <%- ENV.MONGODB_URL %>
-        <%- ENV.MYSQL_URL %>
-    </table>
+    <div class="table-responsive">
+        <table class="table table-bordered table-condensed">
+            <%- ENV_HEADER %>
+            <%- ENV.PORT %>
+            <%- ENV.INSTANCE_NR %>
+            <%- ENV.POSTGRES_URL %>
+            <%- ENV.MONGODB_URL %>
+            <%- ENV.MYSQL_URL %>
+        </table>
+    </div>
 </section>
