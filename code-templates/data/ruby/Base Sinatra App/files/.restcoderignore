@@ -3,3 +3,5 @@
 
 # ignore all files and directories that start with a dot
 .*
+
+Gemfile.lock

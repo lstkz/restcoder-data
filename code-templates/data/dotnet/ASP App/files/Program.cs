@@ -20,6 +20,7 @@ namespace App
                 Port = port,
                 ServerFactory = "Nowin"
             });
+            Console.WriteLine("Listening on " + port);
             Console.WriteLine("READY");
 
             Thread.Sleep(Timeout.Infinite);
