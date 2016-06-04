@@ -1,0 +1,7 @@
+{
+    "problemId": "6",
+    "language": "nodejs",
+    "services": {
+        "database": "service_mongodb"
+    }
+}

@@ -13,6 +13,7 @@ const passport = require('passport');
 const BearerStrategy = require('passport-http-bearer').Strategy;
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+
 const JWT_TOKEN_SECRET = process.env.JWT_TOKEN_SECRET || 'secret';
 
 var connection = mongoose.createConnection(process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/testdb');
