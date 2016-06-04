@@ -68,7 +68,7 @@ app.post('/todos/:id/done', (req, res, next) => {
 
 app.listen(process.env.PORT, function () {
   //Keep this line, otherwise your app will fail testing
-  if (!process.env.INSTANCE_NR || process.env.INSTANCE_NR === '0') {
+  if (!process.env.FOREMAN_WORKER_NAME || process.env.FOREMAN_WORKER_NAME === 'web.1') {
     sequelize.sync().then(function () {
       console.log('READY');
     })

@@ -1,12 +1,12 @@
 
 Implement same API from **Starter: Database connection**, but you must initialize the database schema manually in your code.  
-Your application will be deployed in cluster. Each instance will receive a `INSTANCE_NR` environmental variable.  
-For first instance `INSTANCE_NR` will equal to `0`.  
-For second instance `INSTANCE_NR` will equal to `1`.  
+Your application will be deployed in cluster. Each instance will receive a `FOREMAN_WORKER_NAME` environmental variable.  
+The first web instance will receive a `web.1` value.  
+The second web instance will receive a `web.2` value.  
 and so on  
   
   
-Initialize database only if `INSTANCE_NR` is `0` and before your print `READY` to stdout.
+Initialize database only if `FOREMAN_WORKER_NAME` is `web.1` and before your print `READY` to stdout.
 
 Following table must be created:
 ```

@@ -6,7 +6,7 @@
     "MONGODB_URL": "<tr><td><code>MONGODB_URL</code></td> <td>The url for MongoDB database.</td><td><code>mongodb://username:pass@192.168.1.10:27017/mydb</code></td></tr>",
     "MYSQL_URL": "<tr><td><code>MYSQL_URL</code></td> <td>The url for MySQL database.</td><td><code>mysql://username:pass@192.168.1.10:3306/mydb</code></td></tr>",
     "REDIS_URL": "<tr><td><code>REDIS_URL</code></td> <td>The url for Redis.</td><td><code>redis://username:pass@192.168.1.10:6379</code></td></tr>",
-    "INSTANCE_NR": "<tr><td><code>INSTANCE_NR</code></td> <td>Your application will be deployed in multiple instances. <br/>Every instance will have a different <code>INSTANCE_NR</code>. <br/> To avoid any conflicts init any data (for example: database schema) only if <code>INSTANCE_NR</code> is equal to <code>\"0\".</code></td><td><code>0</code></td></tr>"
+    "FOREMAN_WORKER_NAME": "<tr><td><code>FOREMAN_WORKER_NAME</code></td> <td>Your application will be deployed in multiple instances. <br/>Every instance will receive a <code>FOREMAN_WORKER_NAME</code> variable in format <code>&lt;process_name&gt;.&lt;number&gt;</code>. <br/> To avoid any conflicts init any data (for example: database schema) only if <code>FOREMAN_WORKER_NAME</code> is equal to <code>\"web.1\".</code></td><td><code>web.1</code></td></tr>"
   },
   "NOTE": {
     "READY": "Your application must write <code>READY</code> to the standard output after your server is ready to receive HTTP requests. Timeout is 3s.",
