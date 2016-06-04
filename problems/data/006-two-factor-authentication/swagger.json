@@ -1,0 +1,197 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Two Factor Authentication",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/register": {
+      "post": {
+        "description": "Register a new user. You can assume the request body will be always valid and duplicated usernames won't be created.",
+        "parameters": [
+
+          {
+            "name": "user",
+            "description": "The user to create",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {
+                "username": {"type": "string"},
+                "password": {"type": "string"}
+              }
+            }
+          }
+
+        ],
+
+        "responses": {
+          "204": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+
+    "/login": {
+      "post": {
+        "description": "Authenticate user and obtain a JWT token.",
+        "parameters": [
+          {
+            "name": "credentials",
+            "description": "The user credentials.  \n`code` is required if 2-factor authentication is enabled by user.  \n If 2-factor authentication is disabled and `code` was provided you can ignore it.",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {
+                "username": {"type": "string"},
+                "password": {"type": "string"},
+                "code": {"type": "string"}
+              }
+            }
+          }
+        ],
+
+        "responses": {
+          "401": {
+            "description": "Authentication failed, `error` will be equal to:\n- `INVALID_CREDENTIALS` - username/password combination is invalid or user is not found\n- `CODE_REQUIRED` - 2-factor authentication is enabled, but `code` was not provided \n- `INVALID_CODE` - the autorization code is invalid",
+            "schema": {
+              "properties": {
+                "error": {"type": "string"}
+              }
+            }
+          },
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "properties": {
+                "token": {"type": "string"}
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/me": {
+      "get": {
+        "description": "Get current user",
+        "parameters": [
+          {
+            "name": "authorization",
+            "description": "The JWT token",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "username": {"type": "string"}
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/two-factor": {
+      "post": {
+        "parameters": [
+          {
+            "name": "authorization",
+            "description": "The JWT token",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "description": "Generate a secret and display a QR code.  \n2-factor authentication is not enabled at this moment.  \n User must scan the QR image in Google Authentication, copy the `code` and call the `confirm` endpoint.  \nNOTE: if you call this route multiple times, it should always generate a new secret/qr code.",
+
+        "responses": {
+          "400": {
+            "description": "Operation failed, `error` will be equal to:\n- `ALREADY_ENABLED` - 2-factor authentication is already enabled (it's enabled only if the `confirm` endpoint is called).",
+            "schema": {
+              "properties": {
+                "error": {"type": "string"}
+              }
+            }
+          },
+          "200": {
+            "description": "The binary data of QR image (use jpeg or png format)."
+          }
+        }
+      },
+      "delete": {
+        "parameters": [
+          {
+            "name": "authorization",
+            "description": "The JWT token",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "description": "Disable 2-factor authentication. The `code` parameter is now not required in `POST /login` endpoint.",
+
+        "responses": {
+          "400": {
+            "description": "Operation failed, `error` will be equal to:\n- `NOT_ENABLED` - 2-factor authentication is not enabled.",
+            "schema": {
+              "properties": {
+                "error": {"type": "string"}
+              }
+            }
+          },
+          "204": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+
+    "/two-factor/confirm": {
+      "post": {
+        "parameters": [
+          {
+            "name": "authorization",
+            "description": "The JWT token",
+            "in": "header",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "code",
+            "description": "The code from Google Authenticator",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {
+                "code": {"type": "string"}
+              }
+            }
+          }
+        ],
+        "description": "Confirm 2-factor authentication. The `code` parameter is now required in `POST /login` endpoint.",
+
+        "responses": {
+          "400": {
+            "description": "Operation failed, `error` will be equal to:\n- `ALREADY_ENABLED` - 2-factor authentication is already enabled. \n- `INVALID_CODE` - the authorization code is invalid",
+            "schema": {
+              "properties": {
+                "error": {"type": "string"}
+              }
+            }
+          },
+          "204": {
+            "description": "Successful response"
+          }
+        }
+      }
+    }
+  }
+}

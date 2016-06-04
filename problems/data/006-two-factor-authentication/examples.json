@@ -1,0 +1,189 @@
+[
+  {
+    "name": "main",
+    "requests": [
+      {
+        "description": "Register a user",
+        "request": {
+          "method": "POST",
+          "url": "/register",
+          "body": {
+            "username": "coder",
+            "password": "pa$$$word"
+          }
+        },
+        "response": {
+          "status": 204
+        }
+      },
+
+      {
+        "description": "Try login with invalid password",
+        "request": {
+          "method": "POST",
+          "url": "/login",
+          "body": {
+            "username": "coder",
+            "password": "pass"
+          }
+        },
+        "response": {
+          "status": 401,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "error": "INVALID_CREDENTIALS"
+          }
+        }
+      },
+      {
+        "description": "Log with valid password",
+        "request": {
+          "method": "POST",
+          "url": "/login",
+          "body": {
+            "username": "coder",
+            "password": "pa$$$word"
+          }
+        },
+        "response": {
+          "status": 200,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "token": "eyJ0eXA...wzZ_I0"
+          }
+        }
+      },
+
+      {
+        "description": "Get my info",
+        "request": {
+          "headers": {
+            "authorization": "JWT eyJ0eXA...wzZ_I0"
+          },
+          "method": "GET",
+          "url": "/me"
+        },
+        "response": {
+          "status": 200,
+          "body": {
+            "username": "coder"
+          }
+        }
+      },
+
+      {
+        "description": "Enable 2-factor authentication",
+        "request": {
+          "headers": {
+            "authorization": "JWT eyJ0eXA...wzZ_I0 "
+          },
+          "method": "POST",
+          "url": " /two-factor"
+        },
+        "response": {
+          "status": 200,
+          "body": "<binary data>"
+        }
+      },
+
+      {
+        "description": "Confirm 2-factor authentication (the code is invalid)",
+        "request": {
+          "headers": {
+            "authorization": "JWT eyJ0eXA...wzZ_I0 "
+          },
+          "method": "POST",
+          "url": "/two-factor/confirm",
+          "body": {
+            "username": "666777"
+          }
+        },
+        "response": {
+          "status": 400,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "error": "INVALID_CODE"
+          }
+        }
+      },
+
+      {
+        "description": "Confirm 2-factor authentication (the code is valid)",
+        "request": {
+          "headers": {
+            "authorization": "JWT eyJ0eXA...wzZ_I0 "
+          },
+          "method": "POST",
+          "url": "/two-factor/confirm",
+          "body": {
+            "username": "459014"
+          }
+        },
+        "response": {
+          "status": 204
+        }
+      },
+      {
+        "description": "Login again",
+        "request": {
+          "method": "POST",
+          "url": "/login",
+          "body": {
+            "username": "coder",
+            "password": "pa$$$word"
+          }
+        },
+        "response": {
+          "status": 401,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "error": "CODE_REQUIRED"
+          }
+        }
+      },
+      {
+        "description": "Login again with code",
+        "request": {
+          "method": "POST",
+          "url": "/login",
+          "body": {
+            "username": "coder",
+            "password": "pa$$$word",
+            "code": "015885"
+          }
+        },
+        "response": {
+          "status": 200,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "token": "eyJ0eXA...wzZ_I0"
+          }
+        }
+      },
+
+      {
+        "description": "Disable 2-factor authentication",
+        "request": {
+          "headers": {
+            "authorization": "JWT eyJ0eXA...wzZ_I0 "
+          },
+          "method": "DELETE",
+          "url": "/two-factor"
+        },
+        "response": {
+          "status": 204
+        }
+      }
+    ]
+  }
+]

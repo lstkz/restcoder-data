@@ -1,0 +1,28 @@
+{
+  "_id": 6,
+  "slug": "two-factor-authentication",
+  "name": "Two Factor Authentication",
+  "swaggerSpecs": [
+    {"name": "main", "content": "swagger.json"}
+  ],
+  "level": "Hard",
+  "tags": ["security", "postgres", "mysql", "mongodb", "any database"],
+  "runtime": {
+    "services": {
+      "select": {
+        "database": ["service_postgres", "service_mysql", "service_mongodb"]
+      }
+    },
+    "testSpec": {
+      "testCase": "006-two-factor-authentication"
+    },
+    "processes": {
+      "web": {
+        "instances": 2
+      }
+    },
+    "link": {
+      "database": ["web"]
+    }
+  }
+}
