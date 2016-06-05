@@ -58,5 +58,17 @@
     "rank": {
       "name": "postgres"
     }
+  },
+  {
+    "_id": "app_007_proxy_api",
+    "dockerImage": "restcoder/app_007_proxy_api",
+    "description": "Proxy Api",
+    "version": "1.0.0",
+    "url": "http://{{ip}}:{{port}}",
+    "port": 5050,
+    "envName": "PROXY_API_URL",
+    "limits": {
+      "memory": "64M"
+    }
   }
 ]

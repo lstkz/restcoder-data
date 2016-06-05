@@ -1,0 +1,65 @@
+[
+  {
+    "name": "main",
+    "requests": [
+      {
+        "description": "Call API",
+        "request": {
+          "method": "GET",
+          "url": "/path"
+        },
+        "response": {
+          "status": 200,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "foo": "bar"
+          }
+        }
+      },
+      {
+        "description": "Call API, but Proxy API returns an error",
+        "request": {
+          "method": "GET",
+          "url": "/another-path?foo=bar"
+        },
+        "response": {
+          "status": 502
+        }
+      },
+      {
+        "description": "Call API again, but this time Proxy API works",
+        "request": {
+          "method": "GET",
+          "url": "/another-path?foo=bar"
+        },
+        "response": {
+          "status": 200,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "foobar": "barfoo"
+          }
+        }
+      },
+      {
+        "description": "Api should support any URL",
+        "request": {
+          "method": "GET",
+          "url": "/another-path/a/b/c/d/e/f/g/h/j"
+        },
+        "response": {
+          "status": 200,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {
+            "foobar": "barfoo"
+          }
+        }
+      }
+    ]
+  }
+]

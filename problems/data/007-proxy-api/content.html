@@ -1,0 +1,29 @@
+<section>
+    <h4>Overview</h4>
+
+    <%- md("overview.md") %>
+
+</section>
+
+
+<section>
+    <h4>Notes</h4>
+    <ul>
+        <li><%- NOTE.READY %></li>
+        <li><%- NOTE.MULTI_INSTANCE %></li>
+    </ul>
+</section>
+
+
+<section>
+    <h4>Environmental Variables</h4>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-condensed">
+            <%- ENV_HEADER %>
+            <%- ENV.PORT %>
+            <%- ENV.REDIS_URL %>
+            <tr><td><code>PROXY_API_URL</code></td> <td>The url for Proxy API.</td><td><code>http://192.168.12.141:3000</code></td></tr>
+        </table>
+    </div>
+</section>

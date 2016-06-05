@@ -1,0 +1,30 @@
+{
+  "_id": 7,
+  "slug": "proxy-api",
+  "name": "Proxy API",
+  "swaggerSpecs": [
+    {"name": "main", "content": "swagger.json"}
+  ],
+  "level": "Medium",
+  "tags": ["redis"],
+  "runtime": {
+    "services": {
+      "base": {
+        "redis": "service_redis",
+        "proxy_api": "app_007_proxy_api"
+      }
+    },
+    "testSpec": {
+      "testCase": "007-proxy-api"
+    },
+    "processes": {
+      "web": {
+        "instances": 2
+      }
+    },
+    "link": {
+      "redis": ["web"],
+      "proxy_api": ["web"]
+    }
+  }
+}

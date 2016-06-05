@@ -1,0 +1,27 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Proxy API",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/*": {
+      "get": {
+        "description": "Call the proxy API",
+
+        "responses": {
+          "200": {
+            "description": "Successful response, it can be any JSON object",
+            "schema": {
+              "properties": {
+              }
+            }
+          },
+          "502": {
+            "description": "Bad Gateway. Proxy failed"
+          }
+        }
+      }
+    }
+  }
+}

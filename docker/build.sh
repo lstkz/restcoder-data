@@ -28,3 +28,7 @@ docker build -t restcoder/lang_java:1.8.0  data/languages/java/1.8.0
 docker build -t restcoder/lang_dotnet:4.2.3  data/languages/dotnet/4.2.3
 
 
+# APPS
+docker build -t restcoder/app_007_proxy_api data/apps/007-proxy-api
+
+
