@@ -1,0 +1,28 @@
+{
+  "_id": 8,
+  "slug": "room-reservation-system",
+  "name": "Room Reservation System",
+  "swaggerSpecs": [
+    {"name": "main", "content": "swagger.json"}
+  ],
+  "level": "Medium",
+  "tags": ["postgres", "mysql", "mongodb", "any database"],
+  "runtime": {
+    "services": {
+      "select": {
+        "database": ["service_postgres", "service_mysql", "service_mongodb"]
+      }
+    },
+    "testSpec": {
+      "testCase": "008-room-reservation-system"
+    },
+    "processes": {
+      "web": {
+        "instances": 2
+      }
+    },
+    "link": {
+      "database": ["web"]
+    }
+  }
+}

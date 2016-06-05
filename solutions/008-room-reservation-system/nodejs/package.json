@@ -1,0 +1,9 @@
+{
+  "name": "008-room-reservation-system",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.4.19",
+    "underscore": "^1.8.3"
+  }
+}

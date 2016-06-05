@@ -1,0 +1,102 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Room Reservation System",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/rooms": {
+      "post": {
+        "description": "Create a new room (duplicated rooms won't be created and input data will be always valid).",
+        "parameters": [
+
+          {
+            "name": "room",
+            "description": "The room to create",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {
+                "name": {"type": "string"},
+                "spots": {"type": "number"}
+              }
+            }
+          }
+
+        ],
+
+        "responses": {
+          "204": {
+            "description": "Successful response"
+          }
+        }
+      },
+      "get": {
+        "description": "Get list of all rooms (you can return items in any order)  \nResponse should contain additional information:  \n`spotsLeft` - the number of spots left  \n`reservations` the list of all reservations, each item contains `username` and `totalSpots`. `totalSpots` represents the number of all reseverations made by that user. There should be only one entry per user. If same user made multiple reservations you should sum it.",
+        "responses": {
+          "200": {
+            "description": "Successful response",
+            "schema": {
+              "type": "array",
+              "items": {
+                "title": "Room",
+                "properties": {
+                  "name": {"type": "string"},
+                  "spots": {"type": "number"},
+                  "spotsLeft": {"type": "number"},
+                  "reservations": {
+                    "type": "array",
+                    "items": {
+                      "title": "Reservation",
+                      "properties": {
+                        "username": {"type": "string"},
+                        "totalSpots": {"type": "number"}
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+
+    "/rooms/{name}/reservations": {
+      "post": {
+        "description": "Create a reservation (you can assume input data will be always valid and `spots` will be greater than 0)",
+        "parameters": [
+          {
+            "name": "name",
+            "description": "The room name (you can assume it will be always created)",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "reservation",
+            "description": "The user reservation",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "properties": {
+                "username": {"type": "string"},
+                "spots": {"type": "number"}
+              }
+            }
+          }
+
+        ],
+
+        "responses": {
+          "204": {
+            "description": "Successful response"
+          },
+          "400": {
+            "description": "Couldn't make a reservation, because there is no available spots (you can return any response body)."
+          }
+        }
+      }
+    }
+  }
+}

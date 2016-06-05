@@ -1,0 +1,125 @@
+[
+  {
+    "name": "main",
+    "requests": [
+      {
+        "description": "Create a room",
+        "request": {
+          "method": "POST",
+          "url": "/rooms",
+          "body": {
+            "name": "room_a",
+            "spots": 10
+          }
+        },
+        "response": {
+          "status": 204
+        }
+      },
+      {
+        "description": "Create another room",
+        "request": {
+          "method": "POST",
+          "url": "/rooms",
+          "body": {
+            "name": "room_b",
+            "spots": 5
+          }
+        },
+        "response": {
+          "status": 204
+        }
+      },
+      {
+        "description": "Make a reservation as user1",
+        "request": {
+          "method": "POST",
+          "url": "/rooms/room_a/reservations",
+          "body": {
+            "username": "user1",
+            "spots": 2
+          }
+        },
+        "response": {
+          "status": 204
+        }
+      },
+      {
+        "description": "Make another reservation as user1",
+        "request": {
+          "method": "POST",
+          "url": "/rooms/room_a/reservations",
+          "body": {
+            "username": "user1",
+            "spots": 4
+          }
+        },
+        "response": {
+          "status": 204
+        }
+      },
+      {
+        "description": "Make another reservation as user2",
+        "request": {
+          "method": "POST",
+          "url": "/rooms/room_a/reservations",
+          "body": {
+            "username": "user2",
+            "spots": 3
+          }
+        },
+        "response": {
+          "status": 204
+        }
+      },
+      {
+        "description": "user3 tries to make a reservation, but there are no spots lefts",
+        "request": {
+          "method": "POST",
+          "url": "/rooms/room_a/reservations",
+          "body": {
+            "username": "user3",
+            "spots": 5
+          }
+        },
+        "response": {
+          "status": 400
+        }
+      },
+
+      {
+        "description": "Get all reservations",
+        "request": {
+          "method": "GET",
+          "url": "/reservations"
+        },
+        "response": {
+          "status": 200,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": [{
+            "name": "room_a",
+            "spots": 10,
+            "spotsLeft": 1,
+            "reservations": [
+              {
+                "username": "user1",
+                "totalSpots": 6
+              },
+              {
+                "username": "user2",
+                "totalSpots": 3
+              }
+            ]
+          }, {
+            "name": "room_b",
+            "spots": 5,
+            "spotsLeft": 5,
+            "reservations": []
+          }]
+        }
+      }
+    ]
+  }
+]
