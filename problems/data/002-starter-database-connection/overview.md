@@ -1,6 +1,6 @@
     
-Implement an api using a [postgres](http://www.postgresql.org/) database.   
-Following table with be pre-created with test data:
+Implement an API using a [postgres](http://www.postgresql.org/) database.   
+Following table will be pre-created with test data:
 ```
 CREATE TABLE "product"
 (

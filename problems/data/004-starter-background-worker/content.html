@@ -14,7 +14,7 @@
         <li>The background worker should also write <code>READY</code> to the standard output.</li>
         <li>You can use any commands from Redis. There are no restrictions. See documentation <a href="http://redis.io/commands">http://redis.io/commands</a>.</li>
         <li>The background worker should never exit.</li>
-        <li>The web process won't have access to the postgres database.</li>
+        <li>The web process won't have any access to the postgres database.</li>
         <li>Don't use disk to share any state between the background worker and web. Both processes will be deployed on separated machines.</li>
     </ul>
 </section>

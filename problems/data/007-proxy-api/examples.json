@@ -45,7 +45,7 @@
         }
       },
       {
-        "description": "Api should support any URL",
+        "description": "API should support any URL",
         "request": {
           "method": "GET",
           "url": "/another-path/a/b/c/d/e/f/g/h/j"

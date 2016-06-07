@@ -11,14 +11,14 @@ Please make following assumptions:
 2. The `LABEL` must be the username of the associated user.
 3. The `issuer` parameter must be always equal to `RestCoder`.
 4. The `secret` parameter must be encoded in Base32. The original decoded ASCII secret must have exactly 32 characters.
-The secret must randomly generated and unique for all users.
+The secret must be randomly generated and unique for all users.
 5. Don't include any additional query parameters.
 6. Use default options from [Google Authenticator](https://github.com/google/google-authenticator/wiki/Key-Uri-Format):
      - Algorithm: `SHA1`
      - Digits: `6`
      - Period: `30` (seconds)
      
-Example URI:
+An example of a URI:
 ```
 otpauth://totp/user2?secret=GVHH2W2DONZVMOZBNZMGSUCPJESSGL2KORXUYNSTOZFGE3CMINQQ&issuer=RestCoder
 ```

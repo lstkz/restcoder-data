@@ -1,4 +1,4 @@
-Create a basic proxy with redis caching support.   
+Create a basic proxy with Redis caching support.   
 Your application should catch all `GET` requests and call provided `PROXY_API_URL` with exact pathname and query string.  
 Implement it according to the following algorithm:
 - Use pathname and query string as a key. For example: `/some-path/subpath?foo=bar&anotherparam=1`
