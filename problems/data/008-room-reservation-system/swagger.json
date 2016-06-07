@@ -32,7 +32,7 @@
         }
       },
       "get": {
-        "description": "Get list of all rooms (you can return items in any order)  \nResponse should contain additional information:  \n`spotsLeft` - the number of spots left  \n`reservations` the list of all reservations, each item contains `username` and `totalSpots`. `totalSpots` represents the number of all reseverations made by that user. There should be only one entry per user. If the same user made multiple reservations you should sum them all up.",
+        "description": "Get list of all rooms (you can return items in any order)  \nResponse should contain additional information:  \n`spotsLeft` - the number of spots left  \n`reservations` the list of all reservations, each item contains `username` and `totalSpots`. `totalSpots` represents the number of all reservations made by that user. There should be only one entry per user. If the same user made multiple reservations you should sum them all up.",
         "responses": {
           "200": {
             "description": "Successful response",
