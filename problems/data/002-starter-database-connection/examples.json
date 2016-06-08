@@ -3,7 +3,7 @@
     "name": "main",
     "requests": [
       {
-        "description": "get all products, order by ID in ascending order",
+        "description": "get all products",
         "request": {
           "method": "GET",
           "url": "/products"
