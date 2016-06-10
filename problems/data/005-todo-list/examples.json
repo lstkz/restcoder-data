@@ -6,7 +6,7 @@
         "description": "Create first TODO",
         "request": {
           "method": "POST",
-          "url": "/products",
+          "url": "/todos",
           "body": {
             "name": "my first todo"
           }
@@ -28,7 +28,7 @@
         "description": "Create another TODO",
         "request": {
           "method": "POST",
-          "url": "/products",
+          "url": "/todos",
           "body": {
             "name": "my second todo"
           }
@@ -50,7 +50,7 @@
         "description": "Mark first todo as done",
         "request": {
           "method": "POST",
-          "url": "/products/1/done"
+          "url": "/todos/1/done"
         },
         "response": {
           "status": 204
@@ -61,7 +61,7 @@
         "description": "Mark first todo as done again",
         "request": {
           "method": "POST",
-          "url": "/products/1/done"
+          "url": "/todos/1/done"
         },
         "response": {
           "status": 400,
@@ -75,7 +75,7 @@
         "description": "Get all TODOs",
         "request": {
           "method": "GET",
-          "url": "/products"
+          "url": "/todos"
         },
         "response": {
           "status": 200,
@@ -98,7 +98,7 @@
         "description": "TODO is not found",
         "request": {
           "method": "POST",
-          "url": "/products/12345/done"
+          "url": "/todos/12345/done"
         },
         "response": {
           "status": 404,
@@ -112,7 +112,7 @@
         "description": "Invalid id",
         "request": {
           "method": "POST",
-          "url": "/products/-5/done"
+          "url": "/todos/-5/done"
         },
         "response": {
           "status": 400,
@@ -127,7 +127,7 @@
         "description": "Name is invalid",
         "request": {
           "method": "POST",
-          "url": "/products",
+          "url": "/todos",
           "body": {
             "name": null
           }
