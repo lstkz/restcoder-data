@@ -3,3 +3,4 @@
 
 # ignore all files and directories that start with a dot
 .*
+*.pyc

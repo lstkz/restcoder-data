@@ -1,0 +1,13 @@
+[{
+  "name": "postgres",
+  "image_name": "restcoder/postgres",
+  "description": "A postgres database with sample test data.",
+  "command": "docker run -it --rm -p 5432:5432 restcoder/postgres_starter",
+  "env": "POSTGRES_URL"
+}, {
+  "name": "redis",
+  "image_name": "restcoder/redis",
+  "description": "An empty redis database.",
+  "command": "docker run -it --rm -p 6379:6379 restcoder/redis",
+  "env": "REDIS_URL"
+}]

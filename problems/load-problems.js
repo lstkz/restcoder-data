@@ -35,6 +35,40 @@ function _createGettingStarted(basePath, problem) {
 </section>`);
 }
 
+function _renderDockerSetupRow(image) {
+  return (`
+  <tr>
+    <td><strong>${image.name}</strong></td>
+    <td>
+        ${image.description}<br/><br/>
+        Start docker container:<br/>
+        <pre><code><span class="nv">$ </span>${image.command}</code></pre>
+        Set <code>${image.env}</code> in <code>.env</code>:<br/>
+        <pre><code><span class="nv">$ </span>restcoder set ${image.name}</code></pre>
+    </td>
+  </tr>`);
+}
+
+function dockerSetup(basePath, file='docker-images.json') {
+  const path = Path.join(basePath, file);
+  var images = JSON.parse(fs.readFileSync(path, 'utf8'));
+  return (`
+<section>
+    <h4>Docker Setup</h4>
+    <div class="table-responsive">
+        <table class="table table-bordered table-condensed">
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+            </tr>
+            <tbody>
+                ${images.map(_renderDockerSetupRow).join('')}
+            </tbody>
+        </table>
+    </div>
+</section>`);
+}
+
 utils.run(function*() {
   var directories = fs.readdirSync(basePath);
   yield directories.map(dir => {
@@ -44,6 +78,9 @@ utils.run(function*() {
 
     variables.md = function (filename) {
       return marked(fs.readFileSync(path + "/" + filename, 'utf8'));
+    };
+    variables.dockerSetup = (filename) => {
+      return dockerSetup(path, filename);
     };
     content = ejs.render(content, variables);
     data.content = content + _createGettingStarted(path, data);

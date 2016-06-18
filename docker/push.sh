@@ -27,3 +27,5 @@ docker push restcoder/lang_java:1.8.0
 
 # PROBLEMS
 docker push restcoder/postgres_starter
+docker push restcoder/postgres
+docker push restcoder/redis

@@ -1,0 +1,7 @@
+[{
+  "name": "postgres",
+  "image_name": "restcoder/postgres",
+  "description": "An empty postgres database.",
+  "command": "docker run -it --rm -p 5432:5432 restcoder/postgres",
+  "env": "POSTGRES_URL"
+}]

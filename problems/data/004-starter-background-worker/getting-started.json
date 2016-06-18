@@ -1,0 +1,56 @@
+[
+  {
+    "comment": "Initialize source code"
+  },
+  {
+    "cmd": "restcoder init <%= problem.id %>"
+  },
+  {
+    "comment": "Change working directory"
+  },
+  {
+    "cmd": "cd <%= problem.slug %>"
+  },
+  {
+    "comment": "Create a docker container for Postgres (in new terminal window)"
+  },
+  {
+    "cmd": "docker run -it --rm -p 5432:5432 restcoder/postgres"
+  },
+  {
+    "comment": "Create a docker container for Redis (in new terminal window)"
+  },
+  {
+    "cmd": "docker run -it --rm -p 6379:6379 restcoder/redis"
+  },
+  {
+    "comment": "set POSTGRES_URL to .env"
+  },
+  {
+    "cmd": "restcoder set postgres"
+  },
+  {
+    "comment": "set REDIS_URL to .env"
+  },
+  {
+    "cmd": "restcoder set redis"
+  },
+  {
+    "comment": "Start your application"
+  },
+  {
+    "cmd": "restcoder start"
+  },
+  {
+    "comment": "Test your application locally (in new terminal window)"
+  },
+  {
+    "cmd": "restcoder test"
+  },
+  {
+    "comment": "Submit to RestCoder and run final tests"
+  },
+  {
+    "cmd": "restcoder submit"
+  }
+]

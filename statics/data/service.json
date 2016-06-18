@@ -46,9 +46,9 @@
   },
   {
     "_id": "service_postgres",
-    "dockerImage": "restcoder/service_postgres:9.5.3",
+    "dockerImage": "restcoder/service_postgres:9.4.8",
     "description": "Postgres",
-    "version": "9.5.3",
+    "version": "9.4.8",
     "url": "postgres://postgres:postgres@{{ip}}:{{port}}/postgres",
     "port": 5432,
     "envName": "POSTGRES_URL",

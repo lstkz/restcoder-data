@@ -7,7 +7,7 @@ docker build -t restcoder/base_wheezy data/base/wheezy
 #SERVICES
 docker build -t restcoder/service_mongodb:3.2.6  data/service_mongodb/3.2.6
 docker build -t restcoder/service_mysql:5.7.12  data/service_mysql/5.7.12
-docker build -t restcoder/service_postgres:9.5.3  data/service_postgres/9.5.3
+docker build -t restcoder/service_postgres:9.4.8  data/service_postgres/9.4.8
 docker build -t restcoder/service_redis:3.2.0  data/service_redis/3.2.0
 
 
@@ -35,5 +35,6 @@ docker build -t restcoder/app_007_proxy_api data/apps/007-proxy-api
 
 # PROBLEMS
 docker build -t restcoder/postgres_starter data/problems/002-starter-database-connection/pg_database
+docker build -t restcoder/postgres data/problems/postgres
 
 
