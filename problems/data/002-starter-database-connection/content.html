@@ -3,18 +3,16 @@
 
     <%- md("overview.md") %>
 
-    <strong>This is a starter problem. You can find a complete solution <a href="https://github.com/restcoder/Starter-Database-connection">here</a>.</strong>
+    <strong>This is a starter problem. You can find a complete solution <a
+            href="https://github.com/restcoder/Starter-Database-connection">here</a>.</strong>
 </section>
-
 
 <section>
     <h4>Notes</h4>
     <ul>
         <li><%- NOTE.READY %></li>
-        <li><%- NOTE.MULTI_INSTANCE %></li>
     </ul>
 </section>
-
 
 <section>
     <h4>Environmental Variables</h4>
@@ -26,4 +24,11 @@
             <%- ENV.POSTGRES_URL %>
         </table>
     </div>
+</section>
+
+<hr/>
+
+<section>
+    <h4>Docker Setup</h4>
+    <%- md("docker.md") %>
 </section>

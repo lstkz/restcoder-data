@@ -4,6 +4,7 @@
     "title": "Starter: Hello world",
     "version": "1.0.0"
   },
+  "host": "localhost:5000",
   "paths": {
     "/hello": {
       "get": {
@@ -13,6 +14,21 @@
             "description": "Successful response",
             "schema": {
               "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/hello-json": {
+      "get": {
+        "description": "Get the json object.",
+        "responses": {
+          "200": {
+            "description": "Successful response  \nIn JSON responses always return a header: `Content-Type`: `application/json`",
+            "schema": {
+              "properties": {
+                "hello": {"type": "string"}
+              }
             }
           }
         }

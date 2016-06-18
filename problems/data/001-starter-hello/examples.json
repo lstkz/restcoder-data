@@ -10,11 +10,22 @@
         },
         "response": {
           "status": 200,
-          "headers": {
-            "Content-Type": "text/plain; charset=UTF-8"
-          },
           "responseType": "plain",
           "body": "world"
+        }
+      },
+      {
+        "description": "return the JSON object",
+        "request": {
+          "method": "GET",
+          "url": "/hello-json"
+        },
+        "response": {
+          "status": 200,
+          "headers": {
+            "Content-Type": "application/json"
+          },
+          "body": {"hello": "world"}
         }
       }
     ]

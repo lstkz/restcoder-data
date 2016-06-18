@@ -1,14 +1,18 @@
-<section>
+<section id="overview">
     <h4>Overview</h4>
 
-    Create a simple route <code>GET /hello</code> that returns the word <code>world</code>.
+    Create a hello world API! <br/>    
+    This is the most basic API you can create. You won't use any database, just return static responses.<br/>
+    Your first endpoint must return a plain text <code>world</code>.<br/>
+    Your second endpoint must return a json object  <code>{"hello": "world"}</code>.
+    
     
     <br/><br/>
-    <strong>This is a starter problem. You can find a complete solution <a href="https://github.com/restcoder/Starter-Hello-world">here</a>.</strong>
+    <strong id="solution-link">This is a starter problem. You can find a complete solution <a href="https://github.com/restcoder/Starter-Hello-world">here</a>.</strong>
 </section>
 
 
-<section>
+<section id="notes">
     <h4>Notes</h4>
     <ul>
         <li><%- NOTE.READY %></li>
@@ -16,7 +20,7 @@
 </section>
 
 
-<section>
+<section id="env-variables">
     <h4>Environmental Variables</h4>
 
     <div class="table-responsive">
@@ -25,4 +29,12 @@
             <%- ENV.PORT %>
         </table>
     </div>
+</section>
+
+<hr/>
+
+<section id="docker-setup">
+    <h4>Docker Setup</h4>
+    This section will contain information about available docker images (databases, external services or APIs).<br/>
+    You can install Docker <a href="https://www.docker.com/">here</a>. It will be needed in the next challenge.<br/>
 </section>

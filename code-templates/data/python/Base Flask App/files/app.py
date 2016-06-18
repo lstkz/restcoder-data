@@ -1,7 +1,7 @@
-from flask import Flask
 import time
 import sys
 import os
+from flask import Flask
 from threading import Thread
 
 app = Flask(__name__)
@@ -20,5 +20,4 @@ class readyThread(Thread):
 
 if __name__ == "__main__":
     readyThread().start()
-    port = int(os.getenv('PORT', 8080))
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=int(os.getenv('PORT')))

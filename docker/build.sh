@@ -25,10 +25,15 @@ docker build -t restcoder/lang_python:2.7.11  data/languages/python/2.7.11
 docker build -t restcoder/lang_java:1.8.0  data/languages/java/1.8.0
 
 #.NET
-docker build -t restcoder/lang_dotnet:4.2.3  data/languages/dotnet/4.2.3
+docker build -t restcoder/lang_dotnet:4.0.5  data/languages/dotnet/4.0.5
 
 
 # APPS
 docker build -t restcoder/app_007_proxy_api data/apps/007-proxy-api
+
+
+
+# PROBLEMS
+docker build -t restcoder/postgres_starter data/problems/002-starter-database-connection/pg_database
 
 

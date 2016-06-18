@@ -1,4 +1,4 @@
-FROM mono:4.2.3.4
+FROM mono:4.0.5.1
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
