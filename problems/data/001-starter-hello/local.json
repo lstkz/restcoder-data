@@ -3,7 +3,7 @@
     "comment": "Initialize source code"
   },
   {
-    "cmd": "restcoder init <%= problem.id %>"
+    "cmd": "restcoder init <%= problem._id %>"
   },
   {
     "comment": "Change working directory"

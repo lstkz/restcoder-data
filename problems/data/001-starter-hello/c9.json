@@ -1,0 +1,26 @@
+[
+  {
+    "comment": "Initialize source code in current directory"
+  },
+  {
+    "cmd": "restcoder init <%= problem._id %> ."
+  },
+  {
+    "comment": "Start your application"
+  },
+  {
+    "cmd": "restcoder start"
+  },
+  {
+    "comment": "Test your application locally (in new terminal window)"
+  },
+  {
+    "cmd": "restcoder test"
+  },
+  {
+    "comment": "Submit to RestCoder and run final tests"
+  },
+  {
+    "cmd": "restcoder submit"
+  }
+]

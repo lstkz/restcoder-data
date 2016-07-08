@@ -13,8 +13,8 @@ var basePath = Path.join(__dirname, "./data");
 
 var variables = require("./variables.json");
 
-function _createGettingStarted(basePath, problem) {
-  const path = basePath + "/getting-started.json";
+function _createGettingStarted(basePath, name, problem) {
+  const path = Path.join(basePath, name);
   if (!fs.existsSync(path)) {
     return '';
   }
@@ -69,12 +69,21 @@ function dockerSetup(basePath, file='docker-images.json') {
 </section>`);
 }
 
+function readOrEmpty(path) {
+  if (!fs.existsSync(path)) {
+    return '';
+  }
+  return fs.readFileSync(path, 'utf8');
+}
+
 utils.run(function*() {
   var directories = fs.readdirSync(basePath);
   yield directories.map(dir => {
     var path = basePath + "/" + dir;
     var data = JSON.parse(fs.readFileSync(path + "/data.json", 'utf8'));
     var content = fs.readFileSync(path + "/content.html", 'utf8');
+    var localContent = readOrEmpty(path + "/local.html");
+    var c9Content = readOrEmpty(path + "/c9.html");
 
     variables.md = function (filename) {
       return marked(fs.readFileSync(path + "/" + filename, 'utf8'));
@@ -82,8 +91,12 @@ utils.run(function*() {
     variables.dockerSetup = (filename) => {
       return dockerSetup(path, filename);
     };
-    content = ejs.render(content, variables);
-    data.content = content + _createGettingStarted(path, data);
+    variables.gettingStarted = (filename) => {
+      return _createGettingStarted(path, filename, data);
+    };
+    data.content = ejs.render(content, variables);
+    data.c9Setup = ejs.render(c9Content, variables);
+    data.localSetup = ejs.render(localContent, variables);
     data.examples = require(path + "/examples");
     data.examples.forEach(item => {
       item.requests.forEach(r => {

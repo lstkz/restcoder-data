@@ -24,6 +24,11 @@ docker push restcoder/lang_python:2.7.11
 #JAVA
 docker push restcoder/lang_java:1.8.0
 
+#.NET
+docker push restcoder/lang_dotnet:4.0.5
+
+# APPS
+docker push restcoder/app_007_proxy_api
 
 # PROBLEMS
 docker push restcoder/postgres_starter
