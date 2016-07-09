@@ -1,0 +1,50 @@
+[
+  {
+    "comment": "Install postgres"
+  },
+  {
+    "cmd": "source <(curl -s https://raw.githubusercontent.com/restcoder/sh/master/c9-install-postgres.sh)"
+  },
+  {
+    "comment": "Seed data in postgres"
+  },
+  {
+    "cmd": "<%- readFile('init-postgres') %>"
+  },
+  {
+    "comment": "Clear current workspace (optional)"
+  },
+  {
+    "cmd": "rm -rf ./"
+  },
+  {
+    "comment": "Initialize source code in current directory"
+  },
+  {
+    "cmd": "restcoder init <%= problem._id %> ."
+  },
+  {
+    "comment": "set POSTGRES_URL to .env"
+  },
+  {
+    "cmd": "restcoder set postgres"
+  },
+  {
+    "comment": "Start your application"
+  },
+  {
+    "cmd": "restcoder start"
+  },
+  {
+    "comment": "Test your application locally (in new terminal window)"
+  },
+  {
+    "cmd": "restcoder test"
+  },
+  {
+    "comment": "Submit to RestCoder and run final tests"
+  },
+  {
+    "cmd": "restcoder submit"
+  }
+]

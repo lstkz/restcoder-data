@@ -13,13 +13,13 @@ var basePath = Path.join(__dirname, "./data");
 
 var variables = require("./variables.json");
 
-function _createGettingStarted(basePath, name, problem) {
+function _createGettingStarted(basePath, name, problem, baseVariables) {
   const path = Path.join(basePath, name);
   if (!fs.existsSync(path)) {
     return '';
   }
   var steps = JSON.parse(fs.readFileSync(path, 'utf8'));
-  const variables = {problem};
+  const variables = _.extend({problem}, baseVariables);
   const stepsHtml = steps.map((step) => {
     if (step.cmd) {
       return `<span class="nv">$ </span>${ejs.render(step.cmd, variables)}<br/>`;
@@ -92,7 +92,10 @@ utils.run(function*() {
       return dockerSetup(path, filename);
     };
     variables.gettingStarted = (filename) => {
-      return _createGettingStarted(path, filename, data);
+      return _createGettingStarted(path, filename, data, variables);
+    };
+    variables.readFile = (filename) => {
+      return fs.readFileSync(Path.join(path, filename), 'utf8').replace(/\n/g, '<br/>');
     };
     data.content = ejs.render(content, variables);
     data.c9Setup = ejs.render(c9Content, variables);
