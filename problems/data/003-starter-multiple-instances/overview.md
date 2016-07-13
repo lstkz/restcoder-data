@@ -16,7 +16,7 @@ CREATE TABLE "product"
     name CHARACTER VARYING(20) NOT NULL,
     quantity INT NOT NULL,
     CONSTRAINT product_pkey PRIMARY KEY (id)
-)
+);
 ```
 
 Test data will be inserted by tester. 

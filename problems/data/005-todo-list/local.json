@@ -1,0 +1,44 @@
+[
+  {
+    "comment": "Initialize source code"
+  },
+  {
+    "cmd": "restcoder init <%= problem.id %>"
+  },
+  {
+    "comment": "Change working directory"
+  },
+  {
+    "cmd": "cd <%= problem.slug %>"
+  },
+  {
+    "comment": "Create a docker container for your target database (in new terminal window)"
+  },
+  {
+    "cmd": "{enter a docker command from from the above table}"
+  },
+  {
+    "comment": "set YOUR_ENV_VARIABLE to .env"
+  },
+  {
+    "cmd": "restcoder set {database_name}"
+  },
+  {
+    "comment": "Start your application"
+  },
+  {
+    "cmd": "restcoder start"
+  },
+  {
+    "comment": "Test your application locally (in new terminal window)"
+  },
+  {
+    "cmd": "restcoder test"
+  },
+  {
+    "comment": "Submit to RestCoder and run final tests"
+  },
+  {
+    "cmd": "restcoder submit"
+  }
+]

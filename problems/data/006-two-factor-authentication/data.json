@@ -2,6 +2,7 @@
   "_id": 6,
   "slug": "two-factor-authentication",
   "name": "Two Factor Authentication",
+  "hidden": true,
   "swaggerSpecs": [
     {"name": "main", "content": "swagger.json"}
   ],

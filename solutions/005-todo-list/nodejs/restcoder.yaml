@@ -1,0 +1,26 @@
+##########################################
+# This is a restcoder configuration file #
+# Edit on your own risk                  #
+##########################################
+
+# the problem to solve
+problemId: 5 # TODO list
+
+# your target language
+language: nodejs
+
+# postman collection id used for local testing
+postmanCollectionId: 76c1559f98cac28caff7
+
+
+# your selected services
+services:
+  database: service_mongodb
+
+# config for `restcoder start`
+instances:
+  web: 2
+
+# list of variables required for `restcoder start`
+env:
+  - MONGODB_URL

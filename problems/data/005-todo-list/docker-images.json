@@ -1,0 +1,19 @@
+[{
+  "name": "postgres",
+  "image_name": "restcoder/postgres",
+  "description": "An empty postgres database.",
+  "command": "docker run -it --rm -p 5432:5432 restcoder/postgres_starter",
+  "env": "POSTGRES_URL"
+}, {
+  "name": "mysql",
+  "image_name": "TBD",
+  "description": "TBD",
+  "command": "TBD",
+  "env": "MYSQL_URL"
+}, {
+  "name": "mongodb",
+  "image_name": "TBD",
+  "description": "TBD",
+  "command": "TBD",
+  "env": "MONGODB_URL"
+}]

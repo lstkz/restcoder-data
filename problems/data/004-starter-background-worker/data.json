@@ -2,6 +2,7 @@
   "_id": 4,
   "slug": "starter-background-worker",
   "name": "Starter: Background worker",
+  "hidden": true,
   "swaggerSpecs": [
     {"name": "main", "content": "swagger.json"}
   ],

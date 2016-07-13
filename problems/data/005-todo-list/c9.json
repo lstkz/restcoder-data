@@ -1,0 +1,44 @@
+[
+  {
+    "comment": "Install your target database"
+  },
+  {
+    "cmd": "{enter a command from github}"
+  },
+  {
+    "comment": "Clear current workspace (optional)"
+  },
+  {
+    "cmd": "rm -rf ./"
+  },
+  {
+    "comment": "Initialize source code in current directory"
+  },
+  {
+    "cmd": "restcoder init <%= problem._id %> ."
+  },
+  {
+    "comment": "set POSTGRES_URL to .env"
+  },
+  {
+    "cmd": "restcoder set postgres"
+  },
+  {
+    "comment": "Start your application"
+  },
+  {
+    "cmd": "restcoder start"
+  },
+  {
+    "comment": "Test your application locally (in new terminal window)"
+  },
+  {
+    "cmd": "restcoder test"
+  },
+  {
+    "comment": "Submit to RestCoder and run final tests"
+  },
+  {
+    "cmd": "restcoder submit"
+  }
+]
