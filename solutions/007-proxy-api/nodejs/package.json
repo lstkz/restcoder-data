@@ -4,6 +4,6 @@
     "body-parser": "^1.15.1",
     "express": "^4.13.3",
     "redis": "^2.6.1",
-    "superagent": "^2.0.0"
+    "superagent": "^4.0.0"
   }
 }
