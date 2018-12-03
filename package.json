@@ -18,10 +18,10 @@
   "homepage": "https://gitlab.com/restcoder/restcoder-data#README",
   "dependencies": {
     "co": "^4.6.0",
-    "config": "^1.17.1",
+    "config": "^3.0.0",
     "ejs": "^2.3.4",
-    "marked": "^0.3.5",
-    "mongoose": "4.3.5",
+    "marked": "^0.5.2",
+    "mongoose": "^5.3.14",
     "node-uuid": "^1.4.7",
     "underscore": "^1.8.3"
   }
