@@ -2,7 +2,7 @@
   "name": "004-starter-database-connection",
   "dependencies": {
     "express": "^4.13.3",
-    "pg": "^4.5.5",
+    "pg": "^7.7.1",
     "redis": "^2.6.0-2"
   }
 }
