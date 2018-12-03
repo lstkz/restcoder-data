@@ -1,0 +1,19 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "code-templates/data/nodejs/Base Express App/files/package.json",
+        "docker/data/apps/007-proxy-api/package.json",
+        "package.json",
+        "solutions/001-starter-hello/nodejs/package.json",
+        "solutions/002-starter-database-connection/nodejs/package.json",
+        "solutions/003-starter-multiple-instances/nodejs/package.json",
+        "solutions/004-starter-background-worker/nodejs/package.json",
+        "solutions/005-todo-list/nodejs/package.json",
+        "solutions/006-two-factor-authentication/nodejs/package.json",
+        "solutions/007-proxy-api/nodejs/package.json",
+        "solutions/008-room-reservation-system/nodejs/package.json"
+      ]
+    }
+  }
+}
